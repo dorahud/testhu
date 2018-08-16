@@ -1,0 +1,9 @@
+caseName,door_extAddr,door_authorizedId,door_familyId,name,fp1,fp2,fp3,fp4,pwd1,pwd2
+绑定userId帐号，不修改指纹,orviboDoorMac,0,doorFamilyId,,,,,,,
+修改指纹密码,orviboDoorMac,0,doorFamilyId,修改成员名称,指纹一,指纹二,指纹三,应急指纹的名称,普通密码名称,紧急密码
+新增一个指纹密码,orviboDoorMac,0,doorFamilyId,,修改指纹一,,,修改紧急指纹,,修改紧急密码
+新增第二个指纹对应名称,orviboDoorMac,0,doorFamilyId,,,,,,,
+extAddr为空,emptyNum,0,doorFamilyId,,,,,,,
+familyId 为空,orviboDoorMac,0,emptyNum,,,,,,,
+authorized为空,orviboDoorMac,null,doorFamilyId,,,,,,,
+authorized数据库中不存在,orviboDoorMac,-1,doorFamilyId,,,,,,,

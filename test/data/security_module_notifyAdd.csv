@@ -1,0 +1,10 @@
+testcase_notifyAdd,securityId_notifyAdd,memberName_notifyAdd,memberPhone_notifyAdd,memberSortNum_notifyAdd,assertion_notifyAdd,remark
+在家安防,securityId_home_1,13112345678,13112345678,1,0,
+外出安防,securityId_away_1,13112345678,13112345678,2,0,
+securityId空字符串,emptyStr,13112345678,13112345678,3,1,
+securityId非当前用户,securityId_other_1,13112345678,13112345678,4,64,
+memberName空字符串,securityId_home_1,,13112345678,2,0,
+memberPhone空字符串,securityId_home_1,13112345678,,2,0,
+memberSortNum为0,securityId_home_1,13112345678,13112345678,0,0,按理来说必须大于0，但因为是老接口，而且即使为0，不会对其他接口造成影响，所以不修改
+memberSortNum为6,securityId_home_1,13112345678,13112345678,6,0,接口没有做边界值校验，因为是老接口，所以暂时不做修改
+memberPhone非法,securityId_home_1,13112345678,haha13112345678,2,0,按理来说应该修改，应为是老接口，所以暂时不做修改

@@ -1,0 +1,8 @@
+caseName_wrong,extAddr_wrong,familyId_wrong,authorizedId_wrong,name,AssertNum
+extAddr为空,emptyNum,doorFamilyId2,0,尽情删除吧,1
+familyId 为空,orviboDoorMac,emptyNum,0,尽情删除吧,1
+authorized为空,orviboDoorMac,doorFamilyId2,null,尽情删除吧,1
+familyId为空,orviboDoorMac,otherFamilyId,0,尽情删除吧,0
+name为空,orviboDoorMac,doorFamilyId2,0,null,1
+正常删除,orviboDoorMac,doorFamilyId2,0,尽情删除吧,0
+authorized已被删除,orviboDoorMac,doorFamilyId2,0,尽情删除吧,1

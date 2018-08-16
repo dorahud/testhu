@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="21016" it="0" lt="0" ct="21016" ts="1534407281148" s="false" lb="情景面板遥控器绑定申请通信密钥" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 10001 noDelay: true]</samplerData>
+</sample>
+<sample t="21009" it="0" lt="0" ct="21009" ts="1534407302220" s="false" lb="情景面板遥控器绑定用户登录" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21103" it="0" lt="0" ct="21103" ts="1534407323231" s="false" lb="【情景面板绑定】sql_清除该遥控器被绑定的所有按键" rc="null 0" rm="java.sql.SQLException: Cannot create PoolableConnectionFactory (Communications link failure&#xa;&#xa;The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)" tn="遥控器绑定_V3.2 1-1" dt="text" de="UTF-8" by="199" sby="0" ng="1" na="1">
+  <responseData class="java.lang.String">Cannot create PoolableConnectionFactory (Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)</responseData>
+  <samplerData class="java.lang.String">[Update Statement] update remoteBind SET delFlag = 1 , updateTime = NOW() WHERE deviceId = &apos;0c174e483251492595d8c4d48ccb6e82&apos; and delFlag = 0
+
+</samplerData>
+</sample>
+<sample t="16" it="0" lt="0" ct="0" ts="1534407344336" s="true" lb="BeanShell_判断是哪种遥控器" rc="200" rm="OK" tn="遥控器绑定_V3.2 1-1" dt="text" de="" by="0" sby="0" ng="1" na="1"/>
+<sample t="20996" it="0" lt="0" ct="20996" ts="1534407344369" s="false" lb="【随意贴绑定】新风系统，开" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21004" it="0" lt="0" ct="21004" ts="1534407365492" s="false" lb="【随意贴绑定】新风系统，操作模式：手动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20999" it="0" lt="0" ct="20999" ts="1534407386501" s="false" lb="【随意贴绑定】新风系统，操作模式：自动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21007" it="0" lt="0" ct="21007" ts="1534407407512" s="false" lb="【随意贴绑定】新风系统，循环模式：空气净化（value2=1）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21013" it="0" lt="0" ct="21013" ts="1534407428530" s="false" lb="【随意贴绑定】新风系统，循环模式：全热交换（value2=0）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21009" it="0" lt="0" ct="21009" ts="1534407449554" s="false" lb="【随意贴绑定】新风系统，风速：1档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21007" it="0" lt="0" ct="21007" ts="1534407470575" s="false" lb="【随意贴绑定】新风系统，风速：2档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21010" it="0" lt="0" ct="21010" ts="1534407491593" s="false" lb="【随意贴绑定】新风系统，风速：3档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21002" it="0" lt="0" ct="21002" ts="1534407512615" s="false" lb="【随意贴绑定】新风系统，风速：关闭" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21006" it="0" lt="0" ct="21006" ts="1534407533626" s="false" lb="【随意贴绑定】新风系统，滤网状态：正常" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21002" it="0" lt="0" ct="21002" ts="1534407554641" s="false" lb="【随意贴绑定】新风系统，滤网状态：清洗" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21008" it="0" lt="0" ct="21008" ts="1534407575654" s="false" lb="【随意贴绑定】新风系统，滤网状态：更换" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407596675" s="false" lb="【随意贴绑定】新风系统，滤网报警时间" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20996" it="0" lt="0" ct="20996" ts="1534407617691" s="false" lb="【随意贴绑定】新风系统，关" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407638694" s="false" lb="【随意贴绑定】地暖设备，开" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407659704" s="false" lb="【随意贴绑定】地暖设备，设置温度（参数值在0-20之间）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20997" it="0" lt="0" ct="20997" ts="1534407680713" s="false" lb="【随意贴绑定】地暖设备，关" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="4" it="0" lt="0" ct="0" ts="1534407701716" s="true" lb="BeanShell_判断是哪种遥控器" rc="200" rm="OK" tn="遥控器绑定_V3.2 1-1" dt="text" de="" by="0" sby="0" ng="1" na="1"/>
+<sample t="21003" it="0" lt="0" ct="21003" ts="1534407701722" s="false" lb="【智能遥控器绑定】新风系统，开" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21011" it="0" lt="0" ct="21011" ts="1534407722736" s="false" lb="【智能遥控器绑定】新风系统，操作模式：手动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20996" it="0" lt="0" ct="20996" ts="1534407743753" s="false" lb="【智能遥控器绑定】新风系统，操作模式：自动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21000" it="0" lt="0" ct="21000" ts="1534407764755" s="false" lb="【智能遥控器绑定】新风系统，循环模式：空气净化（value2=1）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21002" it="0" lt="0" ct="21002" ts="1534407785764" s="false" lb="【智能遥控器绑定】新风系统，循环模式：全热交换（value2=0）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21002" it="0" lt="0" ct="21002" ts="1534407806772" s="false" lb="【智能遥控器绑定】新风系统，风速：1档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20997" it="0" lt="0" ct="20997" ts="1534407827781" s="false" lb="【智能遥控器绑定】新风系统，风速：2档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20999" it="0" lt="0" ct="20999" ts="1534407848785" s="false" lb="【智能遥控器绑定】新风系统，风速：3档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21006" it="0" lt="0" ct="21006" ts="1534407869790" s="false" lb="【智能遥控器绑定】新风系统，风速：关闭" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21005" it="0" lt="0" ct="21005" ts="1534407890803" s="false" lb="【智能遥控器绑定】新风系统，滤网状态：正常" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20998" it="0" lt="0" ct="20998" ts="1534407911813" s="false" lb="【智能遥控器绑定】新风系统，滤网状态：清洗" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407932822" s="false" lb="【智能遥控器绑定】新风系统，滤网状态：更换" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407953830" s="false" lb="【智能遥控器绑定】新风系统，滤网报警时间" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20994" it="0" lt="0" ct="20994" ts="1534407974837" s="false" lb="【智能遥控器绑定】新风系统，关" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534407995840" s="false" lb="【智能遥控器绑定】地暖设备，开" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534408016848" s="false" lb="【智能遥控器绑定】地暖设备，设置温度（参数值在0-20之间）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21005" it="0" lt="0" ct="21005" ts="1534408037855" s="false" lb="【智能遥控器绑定】地暖设备，关" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="3" it="0" lt="0" ct="0" ts="1534408058867" s="true" lb="BeanShell_判断是哪种遥控器" rc="200" rm="OK" tn="遥控器绑定_V3.2 1-1" dt="text" de="" by="0" sby="0" ng="1" na="1"/>
+<sample t="21000" it="0" lt="0" ct="21000" ts="1534408058872" s="false" lb="【情景面板绑定】新风系统，开" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534408079878" s="false" lb="【情景面板绑定】新风系统，操作模式：手动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="20994" it="0" lt="0" ct="20994" ts="1534408100888" s="false" lb="【情景面板绑定】新风系统，操作模式：自动" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21003" it="0" lt="0" ct="21003" ts="1534408121888" s="false" lb="【情景面板绑定】新风系统，循环模式：空气净化（value2=1）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21009" it="0" lt="0" ct="21009" ts="1534408142901" s="false" lb="【情景面板绑定】新风系统，循环模式：全热交换（value2=0）" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534408163920" s="false" lb="【情景面板绑定】新风系统，风速：1档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21004" it="0" lt="0" ct="21004" ts="1534408184927" s="false" lb="【情景面板绑定】新风系统，风速：2档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21001" it="0" lt="0" ct="21001" ts="1534408205935" s="false" lb="【情景面板绑定】新风系统，风速：3档风" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21007" it="0" lt="0" ct="21007" ts="1534408226943" s="false" lb="【情景面板绑定】新风系统，风速：关闭" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21004" it="0" lt="0" ct="21004" ts="1534408247954" s="false" lb="【情景面板绑定】新风系统，滤网状态：正常" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21003" it="0" lt="0" ct="21003" ts="1534408268964" s="false" lb="【情景面板绑定】新风系统，滤网状态：清洗" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>
+<sample t="21003" it="0" lt="0" ct="21003" ts="1534408289974" s="false" lb="【情景面板绑定】新风系统，滤网状态：更换" rc="500" rm="java.net.ConnectException: Connection timed out: connect" tn="遥控器绑定_V3.2 1-1" dt="" de="" by="0" sby="0" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>true</failure>
+    <error>false</error>
+    <failureMessage>Response was null</failureMessage>
+  </assertionResult>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+  <samplerData class="java.lang.String">Host: 192.168.2.176 Port: 10001
+Reuse: true Close: false
+[SOLINGER: 0 EOL: 1000 noDelay: false]</samplerData>
+</sample>

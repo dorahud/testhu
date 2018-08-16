@@ -1,0 +1,1669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.2">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="欧瑞博门锁" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CommonModule" enabled="true">
+        <stringProp name="filename">../data/common_module.csv</stringProp>
+        <stringProp name="fileEncoding">GBK</stringProp>
+        <stringProp name="variableNames"></stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="deviceInfo" enabled="true">
+        <stringProp name="filename">../data/deviceInfo.csv</stringProp>
+        <stringProp name="fileEncoding">GBK</stringProp>
+        <stringProp name="variableNames"></stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="deviceInfo_V3.2" enabled="true">
+        <stringProp name="filename">../data/deviceInfo_V3.2.csv</stringProp>
+        <stringProp name="fileEncoding">GBK</stringProp>
+        <stringProp name="variableNames"></stringProp>
+        <boolProp name="ignoreFirstLine">true</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="mysqlCon" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery">Select 1</stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">testSql</stringProp>
+        <stringProp name="dbUrl">jdbc:mysql://192.168.2.248:3306/vihome_cloud</stringProp>
+        <stringProp name="driver">com.mysql.jdbc.Driver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">orvibo888</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">root</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ConfigTestElement guiclass="org.apache.jmeter.protocol.tcp.config.gui.TCP4HomemateConfigGui" testclass="ConfigTestElement" testname="TCP智家365取样器配置" enabled="true">
+        <stringProp name="TCPSampler.server">${host}</stringProp>
+        <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+        <stringProp name="TCPSampler.port">${port}</stringProp>
+        <boolProp name="TCPSampler.nodelay">true</boolProp>
+        <stringProp name="TCPSampler.timeout">3000</stringProp>
+        <stringProp name="TCPSampler.request"></stringProp>
+        <boolProp name="TCPSampler.closeConnection">false</boolProp>
+        <stringProp name="TCPSampler.sessionId">${sessionId}</stringProp>
+        <boolProp name="TCPSampler.isPk">false</boolProp>
+        <stringProp name="TCPSampler.dkey">${dkey}</stringProp>
+        <stringProp name="TCPSampler.version">2.4.0.303</stringProp>
+        <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+        <stringProp name="TCPSampler.soLinger">0</stringProp>
+        <stringProp name="TCPSampler.EolByte">1000</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="132. 欧瑞博新门锁添加锁用户" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="【132. 欧瑞博新门锁添加锁用户】orviboDoor_addUser.csv" enabled="true">
+            <stringProp name="filename">../data/orviboDoor_addUser.csv</stringProp>
+            <stringProp name="fileEncoding">GBK</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="正常添加场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 242,
+ &quot;extAddr&quot;:&quot;${__evalVar(${extAddr})}&quot;,
+ &quot;userId&quot;:&quot;${__evalVar(${userId_Door})}&quot;,
+ &quot;familyId&quot;:&quot;${__evalVar(${doorFamilyId2})}&quot;,
+ &quot;authorizedId&quot;:${authorizedId},
+ &quot;name&quot;:&quot;${doorUserName}&quot;
+}
+
+</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【135. 欧瑞博新门锁删除锁用户】删除用户" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 243,
+ &quot;extAddr&quot;:&quot;${orviboDoorMac}&quot;,
+ &quot;familyId&quot;:&quot;${doorFamilyId}&quot;,
+ &quot;authorizedId&quot;:${authorizedId},
+ &quot;name&quot;:&quot;${doorUserName}&quot;
+}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="异常添加场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 242,
+ &quot;extAddr&quot;:&quot;${__evalVar(${extAddr})}&quot;,
+ &quot;userId&quot;:&quot;${__evalVar(${userId_Door})}&quot;,
+ &quot;familyId&quot;:&quot;${__evalVar(${doorFamilyId2})}&quot;,
+ &quot;authorizedId&quot;:${authorizedId},
+ &quot;name&quot;:&quot;${doorUserName}&quot;
+}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">true</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="133. 欧瑞博新门锁修改锁用户信息" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【133. 欧瑞博新门锁修改锁用户信息】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【133. 欧瑞博新门锁修改锁用户信息】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】为修改用户提供数据" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 242,
+ &quot;extAddr&quot;:&quot;${orviboDoorMac}&quot;,
+ &quot;userId&quot;:&quot;&quot;,
+ &quot;familyId&quot;:&quot;${__evalVar(${doorFamilyId2})}&quot;,
+ &quot;authorizedId&quot;:0,
+ &quot;name&quot;:&quot;尽情修改吧&quot;
+}
+
+</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">8</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="【133. 修改锁用户信息】orviboDoor_updateUser" enabled="true">
+            <stringProp name="filename">../data/orviboDoor_updateUser.csv</stringProp>
+            <stringProp name="fileEncoding">GBK</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell_获取修改用户的报文" enabled="true">
+            <stringProp name="BeanShellSampler.query">String str=&quot;{\&quot;cmd\&quot;:244,\&quot;extAddr\&quot;:\&quot;${orviboDoorMac}\&quot;,\&quot;uid\&quot;:\&quot;${uid}\&quot;,\&quot;familyId\&quot;:\&quot;${familyId}\&quot;,\&quot;authorizedId\&quot;:\&quot;0\&quot;,\&quot;delFlag\&quot;:0&quot;;
+if(&quot;${name}&quot; != null &amp;&amp; !&quot;${name}&quot;.equals(&quot;&quot;)){
+		str += &quot;,\&quot;name\&quot;:\&quot;${name}\&quot;&quot;;
+	}
+	
+	if(&quot;${fp1}&quot; != null &amp;&amp; !&quot;${fp1}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;fp1&apos;:&apos;${fp1}&apos;&quot;;
+	}
+
+	if(&quot;${fp2}&quot; != null &amp;&amp; !&quot;${fp2}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;fp2&apos;:&apos;${fp2}&apos;&quot;;
+	}
+	
+	if(&quot;${fp3}&quot; != null &amp;&amp; !&quot;${fp3}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;fp3&apos;:&apos;${fp3}&apos;&quot;;
+	}
+	
+	if(&quot;${fp4}&quot; != null &amp;&amp; !&quot;${fp4}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;fp4&apos;:&apos;${fp4}&apos;&quot;;
+	}
+
+	if(&quot;${pwd1}&quot; != null &amp;&amp; !&quot;${pwd1}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;fp1&apos;:&apos;${pwd1}&apos;&quot;;
+	}
+
+	if(&quot;${pwd2}&quot; != null &amp;&amp; !&quot;${pwd2}&quot;.equals(&quot;&quot;)){
+		str += &quot;,&apos;pwd2&apos;:&apos;${pwd2}&apos;&quot;;
+	}
+
+
+	str += &quot;}&quot;;
+
+	vars.put(&quot;updateUser_str&quot;,str);
+
+</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="正常场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【133. 欧瑞博新门锁修改锁用户信息】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">${updateUser_str}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="异常场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【133. 欧瑞博新门锁修改锁用户信息】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">${updateUser_str}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">true</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【135. 欧瑞博新门锁删除锁用户】删除用户" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 243,
+ &quot;extAddr&quot;:&quot;${orviboDoorMac}&quot;,
+ &quot;familyId&quot;:&quot;${doorFamilyId}&quot;,
+ &quot;authorizedId&quot;:0,
+ &quot;name&quot;:&quot;尽情修改吧&quot;
+}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="135. 欧瑞博新门锁删除锁用户" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【135. 欧瑞博新门锁删除锁用户】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【135. 欧瑞博新门锁删除锁用户】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【132. 欧瑞博新门锁添加锁用户】为删除用户提供数据" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 242,
+ &quot;extAddr&quot;:&quot;${orviboDoorMac}&quot;,
+ &quot;userId&quot;:&quot;&quot;,
+ &quot;familyId&quot;:&quot;${__evalVar(${doorFamilyId2})}&quot;,
+ &quot;authorizedId&quot;:0,
+ &quot;name&quot;:&quot;尽情删除吧&quot;
+}
+
+</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">7</stringProp>
+        </LoopController>
+        <hashTree>
+          <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【135. 欧瑞博新门锁删除锁用户】${caseName}" enabled="true">
+            <stringProp name="TCPSampler.server"></stringProp>
+            <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+            <stringProp name="TCPSampler.port"></stringProp>
+            <boolProp name="TCPSampler.nodelay">false</boolProp>
+            <stringProp name="TCPSampler.timeout"></stringProp>
+            <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;: 243,
+ &quot;extAddr&quot;:&quot;${__evalVar(${extAddr_wrong})}&quot;,
+ &quot;familyId&quot;:&quot;${__evalVar(${familyId_wrong})}&quot;,
+ &quot;authorizedId&quot;:${authorizedId_wrong},
+ &quot;name&quot;:&quot;尽情删除吧&quot;
+}</stringProp>
+            <boolProp name="TCPSampler.closeConnection">false</boolProp>
+            <stringProp name="TCPSampler.sessionId"></stringProp>
+            <boolProp name="TCPSampler.isPk">false</boolProp>
+            <stringProp name="TCPSampler.dkey"></stringProp>
+            <stringProp name="TCPSampler.version"></stringProp>
+            <stringProp name="ConfigTestElement.username"></stringProp>
+            <stringProp name="ConfigTestElement.password"></stringProp>
+          </TCPSampler>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="orviboDoor_delUser_wrong.csv" enabled="true">
+              <stringProp name="filename">../data/orviboDoor_delUser_wrong.csv</stringProp>
+              <stringProp name="fileEncoding">GBK</stringProp>
+              <stringProp name="variableNames"></stringProp>
+              <boolProp name="ignoreFirstLine">true</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="shareMode">shareMode.all</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+              <stringProp name="JSON_PATH">$.status</stringProp>
+              <stringProp name="EXPECTED_VALUE">${AssertNum}</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">true</boolProp>
+            </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname=" 136. 欧瑞博新门锁设置授权临时密码" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【136. 欧瑞博新门锁设置授权临时密码】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【 136. 欧瑞博新门锁设置授权临时密码】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">12</stringProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="【 136. 欧瑞博新门锁设置授权临时密码】orviboDoor_tempUser.csv" enabled="true">
+            <stringProp name="filename">../data/orviboDoor_tempUser.csv</stringProp>
+            <stringProp name="fileEncoding">GBK</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="正常添加场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【 136. 欧瑞博新门锁设置授权临时密码】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:246,
+ &quot;userName&quot;:&quot;${__evalVar(${doorUserName})}&quot;,
+ &quot;phone&quot;:&quot;${phone_warn}&quot;,
+ &quot;uid&quot;:&quot;${__evalVar(${warnGateWay_uid})}&quot;,
+ &quot;deviceId&quot;:&quot;${__evalVar(${door_did})}&quot;,
+ &quot;userId&quot;:${door_userId},
+ &quot;startTime&quot;:${__time(/1000,)} ,
+ &quot;effectTime&quot;:${door_effectTime},
+ &quot;number&quot;:${door_number}
+}
+</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】取消临时用户" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:247,
+ &quot;uid&quot;:&quot;${__evalVar(${warnGateWay_uid})}&quot;,
+ &quot;deviceId&quot;:&quot;${__evalVar(${door_did})}&quot;,
+ &quot;userId&quot;:${door_userId}
+}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="异常添加场景" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${isNormal}&quot;==&quot;yes&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【 136. 欧瑞博新门锁设置授权临时密码】${caseName}" enabled="true">
+              <stringProp name="TCPSampler.server"></stringProp>
+              <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+              <stringProp name="TCPSampler.port"></stringProp>
+              <boolProp name="TCPSampler.nodelay">false</boolProp>
+              <stringProp name="TCPSampler.timeout"></stringProp>
+              <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:246,
+ &quot;userName&quot;:&quot;${__evalVar(${doorUserName})}&quot;,
+ &quot;phone&quot;:&quot;${phone_warn}&quot;,
+ &quot;uid&quot;:&quot;${__evalVar(${warnGateWay_uid})}&quot;,
+ &quot;deviceId&quot;:&quot;${__evalVar(${door_did})}&quot;,
+ &quot;userId&quot;:${door_userId},
+ &quot;startTime&quot;:${__time(/1000,)} ,
+ &quot;effectTime&quot;:${door_effectTime},
+ &quot;number&quot;:${door_number}
+}</stringProp>
+              <boolProp name="TCPSampler.closeConnection">false</boolProp>
+              <stringProp name="TCPSampler.sessionId"></stringProp>
+              <boolProp name="TCPSampler.isPk">false</boolProp>
+              <stringProp name="TCPSampler.dkey"></stringProp>
+              <stringProp name="TCPSampler.version"></stringProp>
+              <stringProp name="ConfigTestElement.username"></stringProp>
+              <stringProp name="ConfigTestElement.password"></stringProp>
+            </TCPSampler>
+            <hashTree>
+              <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+                <stringProp name="JSON_PATH">$.status</stringProp>
+                <stringProp name="EXPECTED_VALUE">0</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">true</boolProp>
+                <boolProp name="ISREGEX">true</boolProp>
+              </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="137. 欧瑞博新门锁取消临时授权密码" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【 137. 欧瑞博新门锁取消临时授权密码】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【 136. 欧瑞博新门锁设置授权临时密码】新增临时授权密码，尽情修改吧" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:246,
+ &quot;userName&quot;:&quot;新增临时授权密码，尽情修改吧&quot;,
+ &quot;phone&quot;:&quot;13600000000&quot;,
+ &quot;uid&quot;:&quot;${uid_warn}&quot;,
+ &quot;deviceId&quot;:&quot;${orviboDoor_did}&quot;,
+ &quot;userId&quot;:27,
+ &quot;startTime&quot;:${__time(/1000,)} ,
+ &quot;effectTime&quot;:60,
+ &quot;number&quot;:1
+}
+</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】uid为空" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:247,
+ &quot;uid&quot;:&quot;&quot;,
+ &quot;deviceId&quot;:&quot;${orviboDoor_did}&quot;,
+ &quot;userId&quot;:27
+}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree/>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】deviceId为空" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:247,
+ &quot;uid&quot;:&quot;${uid_warn}&quot;,
+ &quot;deviceId&quot;:&quot;&quot;,
+ &quot;userId&quot;:27
+}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">true</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】userId为空" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:247,
+ &quot;uid&quot;:&quot;${__evalVar(${warnGateWay_uid})}&quot;,
+ &quot;deviceId&quot;:&quot;${__evalVar(${door_did})}&quot;,
+ &quot;userId&quot;:null
+}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree/>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【137. 欧瑞博新门锁取消临时授权密码】正常流程" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+ &quot;cmd&quot;:247,
+ &quot;uid&quot;:&quot;${uid_warn}&quot;,
+ &quot;deviceId&quot;:&quot;${orviboDoor_did}&quot;,
+ &quot;userId&quot;:27
+}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="138. 欧瑞博新门锁查询绑定" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1513247258000</longProp>
+        <longProp name="ThreadGroup.end_time">1513247258000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【138. 欧瑞博新门锁查询绑定】001-申请通信密钥" enabled="true">
+          <stringProp name="TCPSampler.classname">com.orvibo.test.sampler.HMTCPClientImpl</stringProp>
+          <stringProp name="TCPSampler.server">${host}</stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port">10001</stringProp>
+          <boolProp name="TCPSampler.nodelay">true</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;softwareVersion&quot;:&quot;64&quot;,&quot;cmd&quot;:0,&quot;language&quot;:&quot;chinese&quot;,&quot;source&quot;:&quot;${source}&quot;,&quot;sysVersion&quot;:&quot;Android4.4.4_19&quot;,&quot;hardwareVersion&quot;:&quot;HUAWEI Che1-CL10&quot;}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.soLinger">0</stringProp>
+          <stringProp name="TCPSampler.EolByte">1000</stringProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">true</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="SessionId-JSON Path Extractor " enabled="true">
+            <stringProp name="VAR">sessionId</stringProp>
+            <stringProp name="JSONPATH">$.SessionId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="dkey - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">dkey</stringProp>
+            <stringProp name="JSONPATH">$.payload.key</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="serial- JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">serial</stringProp>
+            <stringProp name="JSONPATH">$.playload.serial</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【138. 欧瑞博新门锁查询绑定】002-用户登录" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{&quot;cmd&quot;:2,&quot;userName&quot;:&quot;${userName_voice}&quot;,&quot;password&quot;:&quot;${password_voice}&quot;,&quot;type&quot;:3}</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="userId - JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">userId</stringProp>
+            <stringProp name="JSONPATH">$.payload.userId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="familyId- JSON Path Extractor" enabled="true">
+            <stringProp name="VAR">familyId</stringProp>
+            <stringProp name="JSONPATH">$.payload.familyList[0].familyId</stringProp>
+            <stringProp name="DEFAULT">NOTFOUND</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="status - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.payload.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【138. 欧瑞博新门锁查询绑定】正常流程" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+   &quot;cmd&quot;:248,
+    &quot;blueExtAddr&quot;:&quot;${blueExtAddr}&quot;
+}
+</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <TCPSampler guiclass="TCPSamplerGui" testclass="TCPSampler" testname="【138. 欧瑞博新门锁查询绑定】蓝牙地址为空" enabled="true">
+          <stringProp name="TCPSampler.server"></stringProp>
+          <boolProp name="TCPSampler.reUseConnection">true</boolProp>
+          <stringProp name="TCPSampler.port"></stringProp>
+          <boolProp name="TCPSampler.nodelay">false</boolProp>
+          <stringProp name="TCPSampler.timeout"></stringProp>
+          <stringProp name="TCPSampler.request">{
+   &quot;cmd&quot;:248,
+    &quot;blueExtAddr&quot;:&quot;&quot;
+}
+</stringProp>
+          <boolProp name="TCPSampler.closeConnection">false</boolProp>
+          <stringProp name="TCPSampler.sessionId"></stringProp>
+          <boolProp name="TCPSampler.isPk">false</boolProp>
+          <stringProp name="TCPSampler.dkey"></stringProp>
+          <stringProp name="TCPSampler.version"></stringProp>
+          <stringProp name="ConfigTestElement.username"></stringProp>
+          <stringProp name="ConfigTestElement.password"></stringProp>
+        </TCPSampler>
+        <hashTree>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="jp@gc - JSON Path Assertion" enabled="true">
+            <stringProp name="JSON_PATH">$.status</stringProp>
+            <stringProp name="EXPECTED_VALUE">0</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">true</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="工作台" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>

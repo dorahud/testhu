@@ -1,0 +1,11 @@
+caseName,type,deviceId,ispush,statusNum
+【定时推送设置】对所有设备进行推送,0,emptyStr,0,0
+【定时推送设置】对所有设备不推送,0,emptyStr,1,0
+【定时推送设置】对单个设备进行推送,1,rgb_deviceId,0,0
+【定时推送设置】对单个设备不推送,1,colorTemperatureLight,1,0
+【定时推送设置】必填项为空,null,emptyNum,null,error
+【定时推送设置】type为null,null,colorTemperatureLight,0,error
+【定时推送设置】对单个设备发消息时，deviceId为null,1,emptyStr,0,1
+【定时推送设置】isPush为null,0,emptyStr,null,error
+【定时推送设置】type值不合理,3,colorTemperatureLight,1,1
+【定时推送设置】isPush值不合理,0,emptyStr,5,0

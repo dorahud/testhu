@@ -1,0 +1,13 @@
+isNormal,caseName,doorUserName,phone_warn,warnGateWay_uid,door_did,door_userId,door_effectTime,door_number
+yes,正常授权：有效期1小时，一次有效,tempName1,15900000000,uid_warn,orviboDoor_did,26,60,1
+yes,正常授权：有效期24小时，多次有效,tempName2,15900000000,uid_warn,orviboDoor_did,27,1440,0
+yes,有效期不在有效期内（1h、4h、8h、24h）,tempName3,15900000000,uid_warn,orviboDoor_did,28,90,0
+no,用户名为空,emptyNum,15900000000,uid_warn,orviboDoor_did,29,240,0
+no,phone为空,tempName6,null,uid_warn,orviboDoor_did,30,240,0
+no,uid为空,tempName7,15900000000,emptyNum,orviboDoor_did,30,240,0
+no,deviceId为空,tempName8,15900000001,uid_warn,emptyNum,30,240,0
+no,userId为空,tempName9,15900000002,uid_warn,orviboDoor_did,null,240,0
+no,userId小于26,tempName10,15900000003,uid_warn,orviboDoor_did,25,240,0
+no,userId大于30,tempName11,15900000004,uid_warn,orviboDoor_did,31,240,0
+no,effectTime为空,tempName12,15900000005,uid_warn,orviboDoor_did,30,null,0
+no,number为空,tempName13,15900000006,uid_warn,orviboDoor_did,30,240,null

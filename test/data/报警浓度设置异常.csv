@@ -1,0 +1,4 @@
+casename,userName,uid,deviceId,alarmLevel,assertion
+uidÎª¿Õ,xuhuilin@orvibo.com,null,d37025cbdbd74914a7f7ae75e9ef2920,2,"""status"": 1"
+deviceIdÎª¿Õ,xuhuilin@orvibo.com,6001940af596,null,3,"""status"": 1"
+alarmLevelÎª¿Õ,xuhuilin@orvibo.com,6001940af596,d37025cbdbd74914a7f7ae75e9ef2920,null,"""status"": 1"

@@ -1,0 +1,3 @@
+isNormal,caseName,uidTitle,familyIdTitle,deviceId,dataType,resultAssert
+yes,正常场景：CO,uid,familyId,co_deviceId,1,"""status"": 0"
+yes,正常场景：甲醛,HCHO_uid,familyId,HCHO_deviceId,2,"""status"": 0"

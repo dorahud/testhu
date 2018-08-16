@@ -1,0 +1,7 @@
+caseName,keyNo,keyAction,deviceIdType,bindedDeviceId,actionName,order,value1,value2,value3,value4
+系统情景全开,1,0,2,8e68dab3ffa544a99e9d3b1036b378d9,系统情景灯光全开,scene control,0,0,0,0
+系统情景全关,2,0,2,861ed7dc26a644a39b767b77edcb2ab8,系统情景灯光全关,scene control,0,0,0,0
+绑定情景面板_误删,3,0,2,e0f3998b82c14accb54f888a674e8b07,绑定情景面板_误删,scene control,0,0,0,0
+外出布防,1,0,2,258cc7b9301b42c498b889db056c0335,外出布防,outside security,0,0,0,0
+在家布防,3,0,2,258cc7b9301b42c498b889db056c0335,在家布防,inside security,0,0,0,0
+撤防,1,0,2,258cc7b9301b42c498b889db056c0335,撤防,cancel security,0,0,0,0
