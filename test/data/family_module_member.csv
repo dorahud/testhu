@@ -1,4 +1,0 @@
-testcase_member,familyId_member,assertion_member
-正常,familyId_1,0
-familyId为空字符串（目前返回0，但是无结果）,emptyStr,0
-familyId无关联,familyId_other_1,1

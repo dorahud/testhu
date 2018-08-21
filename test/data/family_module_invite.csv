@@ -1,4 +1,0 @@
-testcase_invite,userName_invite,familyId_invite,assertion_invite
-正常,otherEmail_1,familyId,0
-自己邀请自己,userName,familyId,32
-userName未注册,userName_nonexist,familyId,31

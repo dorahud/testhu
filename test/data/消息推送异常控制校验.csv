@@ -1,9 +1,0 @@
-casename,uid2,deviceId,type,isPush,startTime,endTime,week,assertion
-type为空,uid,light19,null,0,15:00:00,23:00:00,255,response is null
-type为-1,uid,light19,-1,0,15:00:00,23:00:00,255,"""status"": 1"
-isPush为空,uid,light19,3,null,15:00:00,23:00:00,255,response is null
-startTime为空,uid,light19,3,0,null,23:00:00,255,response is null
-endTime为空,uid,light19,3,0,15:00:00,null,255,response is null
-week为空,uid,light19,3,0,15:00:00,23:00:00,null,response is null
-uid为空,null,light19,3,0,15:00:00,23:00:00,255,"""status"": 1"
-deviceId为空,uid,null,3,0,15:00:00,23:00:00,255,response is null

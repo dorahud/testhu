@@ -1,3 +1,0 @@
-userName输入异常,errorUserName,uid,"""status"": 1"
-userName为空,emptyNum,uid,"""status"": 1"
-uid为空,userName,emptyNum,"""status"": 1"
